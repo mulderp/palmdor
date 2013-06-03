@@ -1,0 +1,17 @@
+{
+  "name": "palmdor",
+  "version": "0.0.0",
+  "dependencies": {
+    "underscore": "latest",
+    "backbone": "latest",
+    "jquery-masonry": "latest"
+  },
+  "install": {
+    "path": "./vendor/assets/javascripts"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}
