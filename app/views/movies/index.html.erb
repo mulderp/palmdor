@@ -1,2 +1,20 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<div class="main-content">
+  <%= render partial: "shared/splash" %>
+
+  <div id="movies" class="mod-movies">
+    <%= render partial: 'movie', collection: @movies %>
+  </div>
+</div>
+
+<%= javascript_include_tag('browser') %>
+<%= javascript_tag do %>
+  $(document).ready(function(){
+    var BrowserApp = require('./modules/browser');
+    app = new BrowserApp();
+    Backbone.history.start({pushState: true})
+
+    // startup isotope
+    var movies = $("#movies");
+    movies.masonry();
+  });
+<% end %>
