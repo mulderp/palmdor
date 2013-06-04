@@ -6,10 +6,10 @@
   </div>
 </div>
 
-<%= javascript_include_tag('browser') %>
+<%= javascript_include_tag('custom') %>
 <%= javascript_tag do %>
   $(document).ready(function(){
-    var BrowserApp = require('./modules/browser');
+    var BrowserApp = require('./modules/movies');
     app = new BrowserApp();
     Backbone.history.start({pushState: true})
 
