@@ -33,6 +33,8 @@ gem 'bourbon'
 gem 'sprockets', :git => 'git://github.com/sstephenson/sprockets.git'
 gem 'sprockets-commonjs', :git => 'git://github.com/maccman/sprockets-commonjs.git'
 gem 'quiet_assets'
+gem 'zurb-foundation'
+gem 'bourbon'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
