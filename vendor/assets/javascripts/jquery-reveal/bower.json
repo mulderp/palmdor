@@ -1,0 +1,9 @@
+{
+  "name": "jquery-reveal",
+  "version": "0.0.0",
+  "commit": "514cedc440e8e577f5c62203692026573b888714",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/VitalikL/reveal.git"
+  }
+}

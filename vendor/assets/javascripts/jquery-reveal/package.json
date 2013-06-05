@@ -1,0 +1,21 @@
+{
+  "author": "zurb",
+  "name": "jquery-reveal",
+  "version": "1.0",
+  "description": "Lightweight modals for jQuery",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VitalikL/reveal"
+  },
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ]
+}

@@ -35,6 +35,7 @@ gem 'sprockets-commonjs', :git => 'git://github.com/maccman/sprockets-commonjs.g
 gem 'quiet_assets'
 gem 'zurb-foundation'
 gem 'bourbon'
+gem 'handlebars_assets'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
