@@ -10,12 +10,13 @@ var MoviesView = Backbone.View.extend({
 
 var DetailsView = Backbone.View.extend({
   el: $('#details'),
-  template: 'templates/details',
+  template: 'details',
   render: function() {
-    this.$el.html(this.movie);
+    var tmpl = HandlebarsTemplates[this.template]({title: this.title});
+    this.$el.html(tmpl);
   },
   initialize: function(opts) {
-    this.movie = opts.movie;
+    this.title = opts.movie;
     this.render();
   }
 });

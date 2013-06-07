@@ -8,14 +8,11 @@ gem 'rails', '4.0.0.rc1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: [:development, :test]
 
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'
-
-# Use Uglifier as compressor for JavaScript assets
+gem "font-awesome-rails"
+gem 'bourbon'
 gem 'uglifier', '>= 1.3.0'
 
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -29,12 +26,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 1.0.1'
 
-gem 'bourbon'
+gem 'coffee-rails', '~> 4.0.0'
 gem 'sprockets', :git => 'git://github.com/sstephenson/sprockets.git'
 gem 'sprockets-commonjs', :git => 'git://github.com/maccman/sprockets-commonjs.git'
 gem 'quiet_assets'
 gem 'zurb-foundation'
-gem 'bourbon'
 gem 'handlebars_assets'
 
 group :doc do
