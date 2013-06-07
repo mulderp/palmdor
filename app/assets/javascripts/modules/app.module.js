@@ -10,6 +10,14 @@ var MoviesView = Backbone.View.extend({
 
 var DetailsView = Backbone.View.extend({
   el: $('#details'),
+  events: {
+    'click a': 'handleAction'
+  },
+  handleAction: function(ev) {
+    var action = $(ev.currentTarget).data('action');
+    console.log(action);
+    ev.preventDefault();
+  },
   template: 'details',
   render: function() {
     var tmpl = HandlebarsTemplates[this.template]({title: this.title});
