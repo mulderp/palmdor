@@ -9,8 +9,9 @@
 <%= javascript_include_tag('custom') %>
 <%= javascript_tag do %>
   $(document).ready(function(){
-    var BrowserApp = require('./modules/movies');
+    var BrowserApp = require('./modules/app');
     app = new BrowserApp();
+    app.showMovie();
     Backbone.history.start({pushState: true})
 
     // startup isotope

@@ -6,5 +6,6 @@
 
 //= require_tree ./templates
 
-//= require foundation
+//= require foundation/foundation
+//= require foundation/foundation.reveal
 $(document).foundation();
