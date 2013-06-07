@@ -3,19 +3,19 @@
 
   <div id="movies" class="mod-movies">
     <%= render partial: 'movie', collection: @movies %>
+    <div id="details" class="mod-movie details">
+      details
+    </div>
   </div>
 </div>
 
 <%= javascript_include_tag('custom') %>
 <%= javascript_tag do %>
   $(document).ready(function(){
-    var BrowserApp = require('./modules/app');
-    app = new BrowserApp();
-    app.showMovie();
-    Backbone.history.start({pushState: true})
+    Backbone.history.start({pushState: true});
 
-    // startup isotope
-    var movies = $("#movies");
-    movies.masonry();
+    var App = require('./modules/app');
+    var app = new App();
+    app.start();
   });
 <% end %>
