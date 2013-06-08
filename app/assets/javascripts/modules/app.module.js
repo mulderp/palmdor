@@ -9,22 +9,35 @@ var MoviesView = Backbone.View.extend({
 });
 
 var DetailsView = Backbone.View.extend({
-  el: $('#details'),
+
   events: {
     'click a': 'handleAction'
   },
+
   handleAction: function(ev) {
-    var action = $(ev.currentTarget).data('action');
-    console.log(action);
     ev.preventDefault();
+    var action = $(ev.currentTarget).data('action');
+    if (action == 'next') {
+      this.controller.showNext();
+    }
+    else {
+      this.controller.showPrevious();
+    }
   },
+
   template: 'details',
+
   render: function() {
     var tmpl = HandlebarsTemplates[this.template]({title: this.title});
-    this.$el.html(tmpl);
+    console.log(this.title);
+    console.log(tmpl);
+    $("#movies articles").append(tmpl);
   },
+
   initialize: function(opts) {
     this.title = opts.movie;
+    this.controller = opts.controller;
+
     this.render();
   }
 });
@@ -48,22 +61,46 @@ var MovieView = Backbone.View.extend({
 
 var Controller = function() {
 
-  this.showMovie = function(id) {
-    var movie = new DetailsView({movie: id});
+  this.showMovie = function(movie) {
+    console.log(movie);
+    this.detailView = new DetailsView({movie: movie, controller: this});
+  };
+
+  this.showPrevious = function() {
+    this.selected -= 1;
+    this.detailView.remove();
+    this.showMovie(this.movie_ids[this.selected]);
+  };
+
+  this.showNext = function(id) {
+    this.selected += 1;
+    this.detailView.remove();
+    this.showMovie(this.movie_ids[this.selected]);
   };
 
   this.start = function() {
-    var movies = $("#movies");
-    var that = this;
-    movies.masonry();
+    _.bindAll(this, 'showNext', 'showPrevious');
 
-    _.each(movies.find('article'), function(movie) {
+    var movies = $("#movies").find('article');
+
+    var idx = 0;
+    this.movie_ids = _.map(movies, function(movie) {
+      idx += 1;
+      return $(movie).data('movie');
+    });
+
+    var that = this;
+    $('#movies').masonry();
+
+    _.each(movies, function(movie) {
       var movieItem = new MovieView({el: movie});
       movieItem.on('show:movie', function(movie) {
         that.showMovie(movie);
       });
     });
 
+    this.selected = 0;
+    this.showMovie(this.movie_ids[0]);
   };
 }
 
