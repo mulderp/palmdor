@@ -2,7 +2,7 @@
 //= require jquery
 //= require underscore
 //= require backbone
-//= require handlebars.runtime
+//= require handlebars
 
 //= require_tree ./templates
 

@@ -1,23 +1,22 @@
 var MoviesView = Backbone.View.extend({
-
   events: {},
 
   initialize: function() {
     console.log("show");
   }
-
 });
 
-var DetailsView = Backbone.View.extend({
+var ActionsView = Backbone.View.extend({
 
-  el: $('#details'),
+  el: $('#actions'),
 
   events: {
-    'click a': 'handleAction'
+    'click a': 'handleClick'
   },
 
-  handleAction: function(ev) {
+  handleClick: function(ev) {
     ev.preventDefault();
+    console.log(ev);
     var action = $(ev.currentTarget).data('action');
     if (action == 'next') {
       this.controller.showNext();
@@ -25,7 +24,12 @@ var DetailsView = Backbone.View.extend({
     else {
       this.controller.showPrevious();
     }
-  },
+  }
+});
+
+var DetailsView = Backbone.View.extend({
+
+  el: $('#details'),
 
   template: 'details',
 
