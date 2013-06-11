@@ -1,33 +1,11 @@
+var FilterView = require('./views/filter_view');
+
 var MoviesView = Backbone.View.extend({
   events: {},
 
   initialize: function() {
     console.log("show");
   }
-});
-
-var FilterView = Backbone.View.extend({
-
-  events: {
-    'click a': 'handleClick'
-  },
-
-  handleClick: function(ev) {
-    ev.preventDefault();
-    var action = $(ev.currentTarget).data('action');
-    var that = this;
-    if (action == 'next') {
-      that.controller.showNext();
-    }
-    else {
-      that.controller.showPrevious();
-    }
-  },
-
-  initialize: function(opts) {
-    this.controller = opts.controller;
-  }
-
 });
 
 var DetailsView = Backbone.View.extend({
