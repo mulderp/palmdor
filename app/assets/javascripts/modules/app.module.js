@@ -6,9 +6,7 @@ var MoviesView = Backbone.View.extend({
   }
 });
 
-var ActionsView = Backbone.View.extend({
-
-  el: $('#actions'),
+var FilterView = Backbone.View.extend({
 
   events: {
     'click a': 'handleClick'
@@ -16,15 +14,20 @@ var ActionsView = Backbone.View.extend({
 
   handleClick: function(ev) {
     ev.preventDefault();
-    console.log(ev);
     var action = $(ev.currentTarget).data('action');
+    var that = this;
     if (action == 'next') {
-      this.controller.showNext();
+      that.controller.showNext();
     }
     else {
-      this.controller.showPrevious();
+      that.controller.showPrevious();
     }
+  },
+
+  initialize: function(opts) {
+    this.controller = opts.controller;
   }
+
 });
 
 var DetailsView = Backbone.View.extend({
@@ -65,7 +68,6 @@ var MovieView = Backbone.View.extend({
 var Controller = function() {
 
   this.showMovie = function(movie) {
-    console.log(movie);
     var movie = new DetailsView({movie: movie, controller: this});
   };
 
@@ -76,6 +78,7 @@ var Controller = function() {
 
   this.showNext = function(id) {
     this.selected += 1;
+    console.log(this.selected);
     this.showMovie(this.movie_ids[this.selected]);
   };
 
@@ -102,6 +105,7 @@ var Controller = function() {
 
     this.selected = 0;
     this.showMovie(this.movie_ids[0]);
+    var filterView = new FilterView({el: $("#filter"), controller: this});
   };
 }
 
