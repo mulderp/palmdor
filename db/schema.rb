@@ -11,13 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130603210606) do
+ActiveRecord::Schema.define(version: 20130611201608) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categorizations", force: true do |t|
+    t.integer  "category_id"
+    t.integer  "movie_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "movies", force: true do |t|
     t.string   "title"
     t.integer  "year"
     t.string   "original_title"
     t.string   "director"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ratings", force: true do |t|
+    t.integer  "movie_id"
+    t.integer  "stars",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
