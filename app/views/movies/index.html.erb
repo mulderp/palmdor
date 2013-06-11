@@ -1,6 +1,25 @@
 <div class="main-content">
   <%= render partial: "shared/splash" %>
 
+  <div id="filter" class="browser">
+    <div id="movie-nav" class="actions">
+      <h3>Navigate</h3>
+      <a href="#">Previous</a> | <a href="#">Next</a>
+    </div>
+    <div id="movie-nav" class="actions">
+      <h3>Filter by Genre</h3>
+      <ul>
+        <li><input type="checkbox" value="Action">Action</input></li>
+      </ul>
+    </div>
+    <div id="movie-nav" class="actions">
+      <h3>Filter by Rating</h3>
+      <ul>
+        <li><input type="checkbox" value="5 stars"></li>
+      </ul>
+    </div>
+  </div>
+
   <div id="movies" class="mod-movies">
     <%= render partial: 'movie', collection: @movies %>
     <div id="details" class="mod-movie details">
