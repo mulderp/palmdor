@@ -27,5 +27,12 @@ module Palmdor
       g.stylesheets     false
       g.helpers         false
     end
+
+   config.assets.precompile += [
+     'admin.css',
+     'admin.js',
+     'fallback_jquery.js',
+     'modernizr.js'
+   ]
   end
 end

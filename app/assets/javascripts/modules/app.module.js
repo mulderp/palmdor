@@ -10,6 +10,8 @@ var MoviesView = Backbone.View.extend({
 
 var DetailsView = Backbone.View.extend({
 
+  el: $('#details'),
+
   events: {
     'click a': 'handleAction'
   },
@@ -29,15 +31,12 @@ var DetailsView = Backbone.View.extend({
 
   render: function() {
     var tmpl = HandlebarsTemplates[this.template]({title: this.title});
-    console.log(this.title);
-    console.log(tmpl);
-    $("#movies articles").append(tmpl);
+    this.$el.html(tmpl);
   },
 
   initialize: function(opts) {
     this.title = opts.movie;
     this.controller = opts.controller;
-
     this.render();
   }
 });
@@ -63,18 +62,16 @@ var Controller = function() {
 
   this.showMovie = function(movie) {
     console.log(movie);
-    this.detailView = new DetailsView({movie: movie, controller: this});
+    var movie = new DetailsView({movie: movie, controller: this});
   };
 
   this.showPrevious = function() {
     this.selected -= 1;
-    this.detailView.remove();
     this.showMovie(this.movie_ids[this.selected]);
   };
 
   this.showNext = function(id) {
     this.selected += 1;
-    this.detailView.remove();
     this.showMovie(this.movie_ids[this.selected]);
   };
 

@@ -6,7 +6,8 @@
     "underscore": "latest",
     "backbone": "latest",
     "jquery-masonry": "latest",
-    "jquery-reveal": "latest"
+    "jquery-reveal": "latest",
+    "modernizr": "latest"
   },
   "install": {
     "path": "./vendor/assets/javascripts"
