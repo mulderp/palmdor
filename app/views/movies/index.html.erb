@@ -24,17 +24,18 @@
     </div>
   </div>
 
+  <div id="details" class="details">
+    details
+  </div>
   <div id="movies" class="mod-movies">
     <%= render partial: 'movie', collection: @movies %>
-    <div id="details" class="mod-movie details">
-      details
-    </div>
   </div>
 </div>
 
 <%= javascript_include_tag('custom') %>
 <%= javascript_tag do %>
   $(document).ready(function(){
+    $('#movies').masonry();
     Backbone.history.start({pushState: true});
 
     var App = require('./modules/app');

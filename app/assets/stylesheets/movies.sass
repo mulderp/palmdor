@@ -1,5 +1,8 @@
 @import "bourbon"
 
+.mod-movies
+  clear: both
+
 .mod-movie
   @include box-shadow(0 0 5px 3px hsla(40, 50%, 0%, 0.65))
   width: 120px
@@ -8,22 +11,26 @@
   text-align: center
 
 .details
-  width: 260px
+  @include box-shadow(0 0 5px 3px red)
+  width: 60%
+  float: left
+  margin-top: 10px
+  margin-left: 30px
+  min-height: 400px
+  padding: 10px
 
 .browser
-  width: 100%
-  height: 100px
+  width: 220px
+  float: left
 
   .actions
-    float: left
-    width: 300px
-    height: 100px
     border: 1px black solid
+    width: 90%
     padding: 10px
 
     h3
       font-size: 18px
 
-  li
-    list-style: none
+    li
+      list-style: none
     
