@@ -7,14 +7,27 @@
   <% end %>
 </li>
 </ul>
-  <nav>
-  <ul class="main-nav">
-    <li>
-      <%= link_to "", class: 'find' do %>
-        <i class="icon-search"></i>
-      <% end %>
-    </li>
-  </ul>
-  </nav>
+<nav>
+<ul class="main-nav">
+  <li>
+    <%= link_to "", class: 'find' do %>
+      <i class="icon-search"></i>
+    <% end %>
+    <button href="#" data-reveal-id="join">Join</button>
+    <button href="#" data-reveal-id="login">Login</button>
+    <div id="login" class="reveal-modal">
+      <h2>Awesome. Let's Login.</h2>
+      <p class="lead">Login.</p>
+      <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+    <div id="join" class="reveal-modal">
+      <h2>Awesome. You want to Join.</h2>
+      <p class="lead">Join.</p>
+      <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+  </li>
+</ul>
+</nav>
 </div>
-<div class="clear"></div>
