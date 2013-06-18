@@ -1,5 +1,5 @@
 
-[[1974, %q(The Conversation), %q(Francis Ford Coppolo)],
+[[1974, %q(The Conversation), %q(Francis Ford Coppola)],
 [1975, %q(Chronicle of the Years of Fire), %q(Chronique des années de braise), %q(Mohammed Lakhdar-Hamina)],
 [1976, %q(Taxi Driver), %q(Martin Scorsese)],
 [1979, %q(Apocalypse Now), %q(Francis Ford Coppola)],
