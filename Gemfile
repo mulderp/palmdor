@@ -13,6 +13,8 @@ gem "font-awesome-rails"
 gem 'bourbon'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'stretcher', :git => 'https://github.com/mulderp/stretcher.git', :branch => 'logger'
+
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
