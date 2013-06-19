@@ -12,6 +12,7 @@ gem 'sass-rails', '~> 4.0.0.rc1'
 gem "font-awesome-rails"
 gem 'bourbon'
 gem 'uglifier', '>= 1.3.0'
+gem 'active_model_serializers'
 
 gem 'stretcher', :git => 'https://github.com/mulderp/stretcher.git', :branch => 'logger'
 
